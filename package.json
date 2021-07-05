@@ -1,0 +1,17 @@
+{
+	"scripts": {
+		"dev": "NODE_ENV=development postcss src/dev.css -o _site/app.css -w | npx @11ty/eleventy --serve",
+		"build": "NODE_ENV=production TAILWIND_MODE=build postcss src/dev.css -o _site/app.css | npx @11ty/eleventy"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^0.12.1",
+		"@tailwindcss/forms": "^0.3.3",
+		"@tailwindcss/typography": "^0.4.0",
+		"autoprefixer": "^10.2.6",
+		"cssnano": "^5.0.1",
+		"html-minifier": "^4.0.0",
+		"postcss": "^8.2.10",
+		"postcss-cli": "^8.3.1",
+		"tailwindcss": "^2.1.1"
+	}
+}

@@ -1,0 +1,71 @@
+---
+title: learnr.dev
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{{ description }}" />
+        {% if noindex %}
+            <meta name="robots" content="noindex">
+        {% endif %}
+        <title>{{ title }}</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="stylesheet" href="/app.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&family=Roboto+Condensed:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131091389-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-131091389-1');
+        </script>
+
+
+    </head>
+
+    <body class="font-sans antialiased bg-gray-50 text-gray-600">
+
+        <a href="/contact/" class="block bg-green-900 bg-opacity-80 text-white text-xs text-center uppercase tracking-widest py-2">
+            Get in touch to discuss your new website
+        </a>
+
+        <div class="bg-white flex justify-center items-center h-24">
+            <a href="/" class="text-xl md:text-3xl font-heading text-green-900 font-black tracking-wider uppercase">
+                <span class="relative">Ross Topping <span class="absolute bottom-0 left-0 text-center w-full text-xs -mb-3 block text-gray-400">Website Designer</span></span>
+            </a>
+        </div>
+
+        <div class="bg-gray-100 py-12 px-6 flex flex-wrap gap-6 md:gap-8 items-center justify-center uppercase font-bold tracking-widest text-xs text-gray-700">
+            <a href="/">Home</a>
+            <a href="/how-it-works/">How it works</a>
+            <a href="/recent-projects/">Recent Projects</a>
+            <!-- <a href="/get-started/">Get started</a> -->
+            <a href="/contact/">Contact</a>
+        </div>
+
+        {{ content | safe }}
+
+        <div class="bg-green-900 text-white text-opacity-40 font-semibold tracking-widest bg-opacity-80 px-12 py-12">
+            <div class="text-sm lg:text-base text-center font-heading font-light tracking-widest uppercase text-white opacity-75">
+                <div x-data="{year : new Date().getFullYear()}">
+                    &copy;<span x-text="year"></span> Ross Topping. Website Designer. All rights reserved.
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+    </body>
+
+</html>
