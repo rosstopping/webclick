@@ -1,0 +1,54 @@
+---
+layout: default
+---
+<h1 class="text-3xl lg:text-5xl font-bold uppercase font-heading text-center py-12">Find a freelancer</h1>
+<div class="max-w-xl px-6 mx-auto flex items-end gap-2">
+    <div class="flex-1">
+        <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+        <select id="category" name="category" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+            <option selected>Any</option>
+            <option>Web Design</option>
+            <option>PHP</option>
+            <option>Node.js</option>
+        </select>
+    </div>
+    <div class="flex-1">
+        <label for="location" class="block text-sm font-medium text-gray-700">Location</label>
+        <select id="location" name="location" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+            <option selected>Any</option>
+            <optgroup label="">
+                <option class="United Kingdom">🇬🇧 United Kingdom</option>
+                <option value="London, United Kingdom">&nbsp;&nbsp;→&nbsp;London</option>
+                <option value="Leeds, United Kingdom">&nbsp;&nbsp;→&nbsp;Leeds</option>
+                <option value="Newcastle, United Kingdom">&nbsp;&nbsp;→&nbsp;Newcastle</option>
+            </optgroup>
+            <optgroup label="">
+                <option class="USA">🇺🇸 USA</option>
+                <option value="New York, USA">&nbsp;&nbsp;→&nbsp;New York</option>
+                <option value="Los Angeles, USA">&nbsp;&nbsp;→&nbsp;Los Angeles</option>
+                <option value="Seattle, USA">&nbsp;&nbsp;→&nbsp;Seattle</option>
+            </optgroup>
+        </select>
+    </div>
+    <div>
+        <button class="bg-green-700 text-white rounded-md p-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9 9a2 2 0 114 0 2 2 0 01-4 0z" />
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a4 4 0 00-3.446 6.032l-2.261 2.26a1 1 0 101.414 1.415l2.261-2.261A4 4 0 1011 5z" clip-rule="evenodd" />
+            </svg>
+        </button>
+    </div>
+</div>
+<div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 text-center">
+    {% for freelancer in collections.freelancers %}
+    <a href="{{ freelancer.url }}" class="bg-white shadow-sm border border-gray-200 py-8 px-6 rounded transition hover:shadow-lg">
+        <img src="{{ freelancer.data.image }}" class="w-24 h-24 rounded-full object-cover inline-block" />
+        <div class="grid grid-cols-1 gap-1 mt-4">
+            <h2 class="uppercase font-heading text-xl">{{ freelancer.data.title }}</h2>
+            <h3 class="text-sm">{{ freelancer.data.description }}</h3>
+            <h4 class="text-xs">{{ freelancer.data.city }}, {{ freelancer.data.country }}</h4>
+        </div>
+        <!-- <a href="{{ freelancer.url }}" class="bg-black text-white rounded-sm py-2 px-3 mt-4 inline-block text-xs uppercase tracking-wider">View Profile</a> -->
+    </a>
+    {% endfor %}
+</div>

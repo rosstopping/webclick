@@ -3,10 +3,6 @@
 
 Built using [Tailwind CSS](https://tailwindcss.com), [Alpine.js](https://github.com/alpinejs/alpine) & [Eleventy](https://www.11ty.dev).
 
-
-[https://adoring-albattani-cd70b4.netlify.app](https://adoring-albattani-cd70b4.netlify.app)
-
-
 ## Developing your template
 
 
